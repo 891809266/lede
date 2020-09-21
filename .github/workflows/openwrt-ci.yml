@@ -41,12 +41,12 @@ jobs:
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
-      - name: 更新订阅源
       - name: 同步最新的源码
         run: |
           git remote add openwrt https://github.com/coolsnowwolf/lede.git
           git pull openwrt master
           git remote -v
+      - name: 更新订阅源
         run: |
           ./scripts/feeds update -a
           ./scripts/feeds install -a
